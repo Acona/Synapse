@@ -1,0 +1,10 @@
+{
+  "dart.runPubGetOnPubspecChanges": true,
+  "dart.lineLength": 100,
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "search.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true
+  }
+}

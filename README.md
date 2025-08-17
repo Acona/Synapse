@@ -1,16 +1,16 @@
-# synapse
+# Synapse
 
-A new Flutter project.
+Private, cross-platform app for:
+- Cataloging **Products**, **Molds**, **Versions**, **Machines**
+- Fast lookup (part ↔ mold reverse links)
+- Photo capture + upload queue (mobile), desktop admin, and a local DB
+- Optional “Consultation mode” export to share context with GPT
+
+## Repos & Targets
+- Mobile: Flutter (Android first)
+- Desktop Admin: Flutter (Windows) – planned
+- Backend: Local SQLite + file store; optional remote tunnel (Tailscale/WireGuard)
+- Images: Stored as files; DB stores relative paths + metadata
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+See `docs/SETUP.md` for first-run, `docs/REQUIREMENTS.md` for stack, and `docs/ROADMAP.md` for milestones.

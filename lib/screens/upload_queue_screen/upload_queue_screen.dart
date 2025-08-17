@@ -5,8 +5,6 @@ class UploadQueueScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Upload Queue (stub)'),
-    );
+    return const Center(child: Text('Upload Queue (stub)'));
   }
 }

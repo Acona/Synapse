@@ -53,7 +53,10 @@ class _DashCard extends StatelessWidget {
       elevation: 0,
       child: ListTile(
         leading: Icon(icon, size: 32),
-        title: Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+        title: Text(
+          title,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+        ),
         subtitle: Text(subtitle),
         trailing: const Icon(Icons.chevron_right),
         onTap: onTap,
