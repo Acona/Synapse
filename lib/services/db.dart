@@ -23,7 +23,9 @@ class AppDb {
             thumb_path TEXT
           );
         ''');
-        await db.execute('CREATE INDEX IF NOT EXISTS idx_images_created ON images(created_at DESC);');
+        await db.execute(
+          'CREATE INDEX IF NOT EXISTS idx_images_created ON images(created_at DESC);',
+        );
         await db.execute('''
           CREATE TABLE IF NOT EXISTS uploads (
             id TEXT PRIMARY KEY,
@@ -35,7 +37,9 @@ class AppDb {
             FOREIGN KEY(image_id) REFERENCES images(id)
           );
         ''');
-        await db.execute('CREATE INDEX IF NOT EXISTS idx_uploads_status ON uploads(status);');
+        await db.execute(
+          'CREATE INDEX IF NOT EXISTS idx_uploads_status ON uploads(status);',
+        );
       },
     );
     return _db!;

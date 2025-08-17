@@ -1,10 +1,10 @@
 class ImageItem {
-  final String id;          // uuid
-  final String filePath;    // full path on device
-  final int createdAt;      // epoch ms
+  final String id; // uuid
+  final String filePath; // full path on device
+  final int createdAt; // epoch ms
   final int? width;
   final int? height;
-  final int? fileSize;      // bytes
+  final int? fileSize; // bytes
   final String? thumbPath;
 
   ImageItem({

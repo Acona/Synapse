@@ -1,8 +1,8 @@
 enum UploadStatus { pending, uploading, failed, done }
 
 class UploadTask {
-  final String id;        // uuid
-  final String imageId;   // FK -> ImageItem.id
+  final String id; // uuid
+  final String imageId; // FK -> ImageItem.id
   final UploadStatus status;
   final int retryCount;
   final String? lastError;

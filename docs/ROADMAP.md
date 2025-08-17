@@ -1,24 +1,19 @@
-# ROADMAP
+# Roadmap
 
-## Phase 1 – Mobile MVP (this week)
-- Bottom nav + three screens (done)
-- Photo queue model & UI (stub -> list)
-- Local storage placeholders
-- Theming toggle & haptics toggle (stub)
+## v0 (MVP)
+- Camera capture with permission flow
+- Upload queue with retry/offline
+- Search hub + local SQLite schema
+- Theme presets + custom color
+- Export logs + basic settings
+- Consultation Packet export
 
-## Phase 2 – Data Model & Search
-- SQLite schema + DAOs
-- Product/Mold/Version linking UIs
-- Search by generic/part/mold
+## v0.1 – Quality & polish
+- Better empty-states & help chips
+- Quick tags
+- Small perf wins (image sizing)
 
-## Phase 3 – Desktop Admin
-- Windows app build
-- Full CRUD, printing/export, image review
-
-## Phase 4 – Remote Access
-- Tailscale (simple) OR HTTPS reverse proxy (advanced)
-- Auth gate (device pin or OS user check)
-
-## Phase 5 – Extras
-- Consultation Mode export builder
-- Predictive insights (server side), non-intrusive mobile notifications
+## v1 – Desktop + connectivity
+- Flutter Windows desktop companion
+- Remote access (Tailscale/WireGuard)
+- PDF batch export & admin tools
