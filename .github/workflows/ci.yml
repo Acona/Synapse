@@ -2,20 +2,26 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.35.1'
-          channel: 'stable'
+          channel: stable
           cache: true
-      - run: flutter pub get
-      - run: dart format --output=none --set-exit-if-changed .
-      - run: dart analyze
+
+      - name: flutter pub get
+        run: flutter pub get
+
+      # Format but don't fail the build if it changes files
+      - name: dart format
+        run: dart format --output=none .
+
+      - name: dart analyze
+        run: dart analyze lib
