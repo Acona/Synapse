@@ -1,17 +1,23 @@
-# Synapse Backlog
+# Backlog
 
-## Implemented
-- Bottom navigation bar with 4 tabs.
-- Screens: Dashboard, Camera, Upload Queue, Search Hub.
-- Git initialized, repo structure documented.
+## Ready (next up)
+- Camera screen: integrate `camera` plugin, ask permissions, capture to app folder.
+- Upload queue: list items, manual retry, clear done, background-safe worker.
+- Search hub: local text filter across Products/Molds/Machines; empty-state helpers.
+- Error log service: rolling file + Export logs action.
+- Theme settings: presets + custom color wheel (persist per-device).
 
-## Next Steps
-- Wire up Dashboard, Camera, Upload Queue, Search Hub screens with placeholder widgets.
-- Add ability to return to Main Menu via bottom nav.
-- Prepare for optional GitHub remote.
+## Doing
+- Bottom nav + three stub screens (done).
+- Dark theme + seed color (done).
 
-## Future Ideas
-- Add a hamburger menu or drawer navigation.
-- Add dynamic theming (e.g., based on device theme).
-- Expand Upload Queue to support real file uploads.
-- Add analytics/debugging overlays.
+## Later
+- Consultation Packet (compose text + selected images → share).
+- Quick tags on photo capture overlay.
+- Desktop app scaffolding (Windows).
+- Remote connectivity (Tailscale/WireGuard).
+- Predictive insights (PC background service).
+
+## Ideas / Parking lot
+- Inline annotation on photos (arrows/labels).
+- CSV/Excel import/export for entities.
