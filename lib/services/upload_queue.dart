@@ -15,6 +15,7 @@ class PendingPhoto {
 }
 
 class UploadQueue {
+  // later: enqueue, dequeue, retry/backoff, mark failed/done
   UploadQueue._();
   static final UploadQueue instance = UploadQueue._();
 
