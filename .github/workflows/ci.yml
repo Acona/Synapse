@@ -1,27 +1,49 @@
-name: CI
+﻿name: Flutter CI (analyze & test)
 
 on:
   push:
   pull_request:
 
 jobs:
-  build:
+  flutter-ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Flutter
+      - name: Set up Flutter (stable)
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: true
+          # flutter-version: 3.35.1  # ← uncomment to pin a specific version
 
-      - name: flutter pub get
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
         run: flutter pub get
 
-      # Format but don't fail the build if it changes files
-      - name: dart format
-        run: dart format --output=none .
+      - name: Verify formatting (no changes allowed)
+        run: dart format --output=none --set-exit-if-changed .
 
-      - name: dart analyze
-        run: dart analyze lib
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --no-pub
+
+# --- Optional: build an APK as a separate job (commented out to keep it light)
+#  android-build:
+#    runs-on: ubuntu-latest
+#    needs: flutter-ci
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: subosito/flutter-action@v2
+#        with:
+#          channel: stable
+#      - run: flutter pub get
+#      - run: flutter build apk --debug
+#      - uses: actions/upload-artifact@v4
+#        with:
+#          name: app-debug.apk
+#          path: build/app/outputs/flutter-apk/app-debug.apk
