@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -10,7 +10,9 @@ class SettingsPage extends StatelessWidget {
       children: [
         SwitchListTile(
           title: const Text('Stay awake hint shown'),
-          subtitle: const Text('(Device option is already enabled on your phone)'),
+          subtitle: const Text(
+            '(Device option is already enabled on your phone)',
+          ),
           value: true,
           onChanged: (_) {},
         ),

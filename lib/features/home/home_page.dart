@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,7 +15,10 @@ class HomePage extends StatelessWidget {
             key: const ValueKey('home_content'),
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Synapse', style: Theme.of(context).textTheme.headlineMedium),
+              Text(
+                'Synapse',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
               const SizedBox(height: 12),
               Text(
                 'Base UI scaffold is live. Use this as the safe point for adding features.',
@@ -33,14 +36,12 @@ class HomePage extends StatelessWidget {
 
 class _Counter extends StatefulWidget {
   const _Counter();
-
   @override
   State<_Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<_Counter> {
   int _count = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(

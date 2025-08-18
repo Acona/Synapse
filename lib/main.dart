@@ -1,15 +1,12 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'features/home/home_page.dart';
 import 'features/settings/settings_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Lightweight global error logger so we can see issues in release too
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.dumpErrorToConsole(details);
   };
-
   runApp(const SynapseApp());
 }
 
@@ -18,7 +15,9 @@ class SynapseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF6C63FF));
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: const Color(0xFF6C63FF),
+    );
     return MaterialApp(
       title: 'Synapse',
       theme: ThemeData(
@@ -35,18 +34,13 @@ class SynapseApp extends StatelessWidget {
 
 class RootShell extends StatefulWidget {
   const RootShell({super.key});
-
   @override
   State<RootShell> createState() => _RootShellState();
 }
 
 class _RootShellState extends State<RootShell> {
   int _index = 0;
-
-  static const _pages = [
-    HomePage(),
-    SettingsPage(),
-  ];
+  static const _pages = [HomePage(), SettingsPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +53,16 @@ class _RootShellState extends State<RootShell> {
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.settings_outlined), selectedIcon: Icon(Icons.settings), label: 'Settings'),
+          NavigationDestination(
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.settings_outlined),
+            selectedIcon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
         ],
         onDestinationSelected: (i) => setState(() => _index = i),
       ),
